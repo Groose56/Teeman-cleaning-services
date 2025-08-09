@@ -73,12 +73,12 @@ app.use(session({
   }
 }));
 
-function isAuthenticated(req, res, next) {
+/*function isAuthenticated(req, res, next) {
   if (req.session.isAdmin) {
     return next();
   }
   res.status(401).json({ message: 'Unauthorized. Please log in.' });
-}
+}*/
 
 /* ---------------- ROUTES ---------------- */
 // Serve login page
@@ -334,3 +334,4 @@ app.post('/api/bookings', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+
