@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teeman Admin Panel</title>
+  <link rel="stylesheet" href="./css/admin_panel.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="./images/teesman.png" alt="Logo">
+        <h2>Teeman Admin</h2>
+      </div>
+      <nav>
+        <a href="#" class="active" onclick="showSection('dashboard')">Dashboard</a>
+        <a href="#" onclick="showSection('bookings')">Bookings</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Dashboard Section -->
+      <section id="dashboard" class="section active">
+        <h1>Dashboard</h1>
+        <div class="stats-cards">
+          <div class="card blue">
+            <h3>Total Bookings</h3>
+            <p id="total-bookings">0</p>
+          </div>
+          <div class="card yellow">
+            <h3>Pending</h3>
+            <p id="pending-bookings">0</p>
+          </div>
+          <div class="card green">
+            <h3>Completed</h3>
+            <p id="completed-bookings">0</p>
+          </div>
+        </div>
+        <div class="table-container">
+          <h2>Recent Bookings</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Client Name</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="recent-bookings-table-body">
+              <tr><td colspan="4">No data available</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Bookings Section -->
+      <section id="bookings" class="section">
+        <h1>Manage Bookings</h1>
+        <div class="filters">
+          <input type="text" id="search-input" placeholder="Search bookings...">
+          <select id="filter-service">
+            <option value="">All Services</option>
+            <option value="Residential Cleaning">Residential Cleaning</option>
+            <option value="Carpet Cleaning">Carpet Cleaning</option>
+            <option value="Commercial Cleaning">Commercial Cleaning</option>
+            <option value="Pressure Washing">Pressure Washing</option>
+          </select>
+          <select id="filter-status">
+            <option value="">All Statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
+          <input type="date" id="filter-date">
+          <button id="clear-filters">Clear Filters</button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Client Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="bookings-table-body">
+              <tr><td colspan="6">Loading bookings...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="booking-details-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Booking Details</h2>
+      <p><strong>ID:</strong> <span id="modal-booking-id"></span></p>
+      <p><strong>Name:</strong> <span id="modal-client-name"></span></p>
+      <p><strong>Email:</strong> <span id="modal-client-email"></span></p>
+      <p><strong>Phone:</strong> <span id="modal-client-phone"></span></p>
+      <p><strong>Address:</strong> <span id="modal-client-address"></span></p>
+      <p><strong>Service:</strong> <span id="modal-service-type"></span></p>
+      <p><strong>Message:</strong> <span id="modal-client-message"></span></p>
+      <p><strong>Date:</strong> <span id="modal-booking-date"></span></p>
+      <p><strong>Status:</strong> <span id="modal-booking-status"></span></p>
+      <select id="update-status">
+        <option value="Pending">Pending</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <button onclick="updateBookingStatus(document.getElementById('modal-booking-id').textContent)">Update</button>
+    </div>
+  </div>
+
+  <script src="./js/admin_panel.js"></script>
+</body>
+</html>

@@ -1,0 +1,768 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation Bar */
+.nav-container {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 16px;
+  background-color: #ffffff; /* Added background for better visibility */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.nav-container img {
+  width: 66px;
+  height: auto;
+}
+
+.nav-container a {
+  color: #333;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-container a:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.nav-container .cta-button {
+  background-color: #ffffff;
+  color: #333;
+  padding: 12px 24px;
+  border-radius: 48px;
+  border: 1px solid #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.nav-container .cta-button:hover {
+  background-color: #2a54dd;
+  color: #ffffff;
+  border: none;
+}
+
+/* Main Hero Container */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 500px;
+  width: 100%;
+  margin: 10px 5px;
+}
+
+/* Hero Text */
+.hero-text {
+  max-width: 50%;
+  text-align: left;
+  gap: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+}
+
+.hero-text h1 span {
+  color: #2a54dd;
+}
+
+.hero-text p {
+  font-size: 16px;
+}
+
+.hero-text a {
+  background: #2a54dd;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 48px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Hero Image */
+.hero-image {
+  display: flex;
+  align-items: end;
+  width: 440px;
+  height: 440px;
+  background: url('../images/Cleaning\ men.jpg') no-repeat center;
+  background-size: cover;
+  border-radius: 16px;
+  justify-content: center;
+}
+
+.hero-features {
+  display: flex;
+  gap: 10px;
+}
+
+.hero-features span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border: 1px solid #030a41;
+  color: #030a41;
+  font-weight: 500;
+  border-radius: 16px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-container {
+      flex-direction: column;
+      padding: 10px;
+  }
+
+  .nav-container a {
+      margin: 10px 0;
+  }
+
+  .nav-container .cta-button {
+      margin-top: 10px;
+  }
+
+  .hero {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+  }
+
+  .hero-text {
+      max-width: 100%;
+      text-align: center;
+      align-items: center;
+  }
+
+  .hero-text h1 {
+      font-size: 36px;
+  }
+
+  .hero-image {
+      width: 100%;
+      height: 300px;
+      margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+      font-size: 24px;
+  }
+
+  .hero-text p {
+      font-size: 14px;
+  }
+
+  .hero-features span {
+      font-size: 10px;
+  }
+
+  .nav-container img {
+      width: 50px;
+  }
+}
+
+/* SECTION AND SERVICES */
+.section {
+  padding: 4px;
+  width: 100%;
+  margin: 0;
+}
+
+.section h1 {
+  margin-top: 10px;
+  color: #007bff;
+}
+
+/* Services */
+.services {
+  display: block;
+  justify-content: space-between;
+}
+
+/* Residential Container */
+.R-container {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  border-radius: 30px;
+  background-color: rgba(255, 197, 116, 0.249);
+}
+
+.R-text {
+  width: 50%;
+  padding-top: 155px;
+  padding-left: 75px;
+  text-align: left;
+  gap: 30px;
+}
+
+.R-text h1 {
+  padding-bottom: 30px;
+  color: #2a54dd;
+}
+
+.R-text p {
+  font-size: larger;
+  padding-right: 70px;
+  color: #030a41;
+}
+
+.R-image {
+  margin-top: 15px;
+  margin-bottom: 35px;
+  margin-right: 20px;
+  width: 350px;
+  height: 550px;
+  margin-left: auto;
+}
+
+.R-image img {
+  border-radius: 20px;
+}
+
+/* Carpet Container */
+.C-container {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  border-radius: 30px;
+  background-color: rgba(134, 255, 189, 0.196);
+}
+
+.C-text {
+  width: 50%;
+  padding-top: 155px;
+  padding-right: 75px;
+  text-align: right;
+  gap: 30px;
+}
+
+.C-text h1 {
+  padding-bottom: 30px;
+  color: #2a54dd;
+}
+
+.C-text p {
+  font-size: larger;
+  padding-left: 70px;
+  color: #030a41;
+}
+
+.C-image {
+  margin-top: 15px;
+  margin-bottom: 35px;
+  margin-left: 20px;
+  width: 350px;
+  height: 550px;
+  margin-right: auto;
+}
+
+.C-image img {
+  border-radius: 20px;
+}
+
+/* Commercial Cleaning */
+.CO-container {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  border-radius: 30px;
+  background-color: rgba(255, 197, 116, 0.249);
+}
+
+.CO-text {
+  width: 50%;
+  padding-top: 155px;
+  padding-left: 75px;
+  text-align: left;
+  gap: 30px;
+}
+
+.CO-text h1 {
+  padding-bottom: 30px;
+  color: #2a54dd;
+}
+
+.CO-text p {
+  font-size: larger;
+  padding-right: 70px;
+  color: #030a41;
+}
+
+.CO-image {
+  margin-top: 15px;
+  margin-bottom: 35px;
+  margin-right: 20px;
+  width: 350px;
+  height: 550px;
+  margin-left: auto;
+}
+
+.CO-image img {
+  border-radius: 20px;
+}
+
+/* Pressure Cleaning */
+.P-container {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  border-radius: 30px;
+  background-color: rgba(134, 255, 189, 0.196);
+}
+
+.P-text {
+  width: 50%;
+  padding-top: 155px;
+  padding-right: 75px;
+  text-align: right;
+  gap: 30px;
+}
+
+.P-text h1 {
+  padding-bottom: 30px;
+  color: #2a54dd;
+}
+
+.P-text p {
+  font-size: larger;
+  padding-left: 70px;
+  color: #030a41;
+}
+
+.P-image {
+  margin-top: 15px;
+  margin-bottom: 35px;
+  margin-left: 20px;
+  width: 350px;
+  height: 550px;
+  margin-right: auto;
+}
+
+.P-image img {
+  border-radius: 20px;
+}
+
+/* Service Responsiveness */
+@media (max-width: 768px) {
+  .R-container, .C-container, .CO-container, .P-container {
+      flex-direction: column;
+  }
+
+  .R-text, .C-text, .CO-text, .P-text {
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+  }
+
+  .R-image, .C-image, .CO-image, .P-image {
+      width: 100%;
+      height: auto;
+      margin: 20px auto;
+  }
+
+  .R-image img, .C-image img, .CO-image img, .P-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .R-text h1, .C-text h1, .CO-text h1, .P-text h1, .section h1 {
+      font-size: 20px;
+  }
+
+  .R-text p, .C-text p, .CO-text p, .P-text p {
+      font-size: 16px;
+  }
+}
+
+/* Booking Forms */
+.B-section {
+  display: block;
+  width: 100%;
+}
+
+.B-section h2 {
+  margin: 20px auto;
+  padding: 20px;
+  color: #007bff;
+  font-size: 35px;
+}
+
+/* General Form Styling */
+form {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+/* Label Styling */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+/* Input, Select, Textarea Base Styling */
+
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
+}
+
+input[type="date"]:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* Placeholder Styling */
+input::placeholder,
+textarea::placeholder {
+  color: #999999;
+  font-style: italic;
+}
+
+/* Specific Styles for Text Inputs */
+input[type="text"] {
+  height: 48px; /* Consistent height */
+}
+
+/* Phone Form Container */
+.phone-form {
+  display: flex;
+  gap: 15px; /* Space between select and input */
+  margin-bottom: 20px;
+}
+
+.phone-form select {
+  flex-shrink: 0; /* Prevents select from shrinking */
+  width: 120px; /* Adjust as needed for country code */
+}
+
+.phone-form input[type="text"] {
+  flex-grow: 1; /* Allows input to take up remaining space */
+}
+
+/* Textarea Specific Styling */
+textarea {
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 120px;
+  line-height: 1.6;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* Optional: Add a subtle hover effect */
+input[type="text"]:hover,
+select:hover,
+textarea:hover {
+  border-color: #999999;
+}
+
+/* Optional: Submit Button (Good practice to include) */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 15px 25px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 30px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+  background-color: #004085;
+  transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  form {
+      margin: 20px auto;
+      padding: 20px;
+  }
+
+  .phone-form {
+      flex-direction: column; /* Stack elements on smaller screens */
+      gap: 0; /* Remove gap when stacked */
+  }
+
+  .phone-form select {
+      width: 100%; /* Full width when stacked */
+      margin-bottom: 20px; /* Add margin back for spacing */
+  }
+
+  .B-section h2 {
+      margin: 20px auto;
+      padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  input[type="text"],
+  select,
+  textarea {
+      font-size: 0.95em;
+      padding: 10px 12px;
+  }
+
+  button[type="submit"] {
+      font-size: 1em;
+      padding: 12px 20px;
+  }
+}
+
+/* Image Styles */
+.image {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.image img {
+  width: 250px; /* Adjust width as needed */
+  height: 250px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures the image covers the area */
+  border-radius: 20%; /* Makes the image round */
+}
+
+/* Testimonial Section */
+.testimonials-section {
+  background-color: #f7f7f7;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #007bff;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px;
+  width: calc(33.33% - 20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  font-size: 16px;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Responsive design for testimonials */
+@media (max-width: 768px) {
+  .testimonial-card {
+      width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card {
+      width: 100%;
+      margin: 10px 0;
+  }
+}
+
+/* Gallery Section */
+.gallery-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery-item {
+  width: calc(33.33% - 20px);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive design for gallery */
+@media (max-width: 768px) {
+  .gallery-item {
+      width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+      width: 100%;
+      margin: 10px 0;
+  }
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #f7f7f7;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.contact-info i {
+  margin-right: 10px;
+}
+
+.availability {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  clear: both;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+/* Mobile Responsiveness for Contact Section */
+@media (max-width: 768px) {
+  .contact-section {
+      padding: 40px 20px;
+  }
+
+  .section-title {
+      font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+      padding: 20px;
+  }
+
+}

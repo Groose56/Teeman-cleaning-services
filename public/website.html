@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teeaman</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<header>
+  <div class="nav-container">
+
+    <!-- Logo -->
+    <img src="./images/teesman.png" alt="logo">
+
+    <!-- Navbar items -->
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+     <!-- <a href="./login.html">Admin Panel</a> -->
+    </nav>
+
+    <!-- CTA -->
+    <a class="cta-button" href="#book">Book Now</a>
+  </div>
+</header>
+
+<body>
+  <div class="hero">
+    <!-- <h1>TEEMAN CLEANING SERVICES</h1> -->
+    <div class="hero-text">
+      <h1>Your <span>Trusted</span> Cleaning Partner</h1>
+
+      <p>Reliable Cleaning for Home & Office<br>Experience the difference with our professional cleaning services.</p>
+
+      <a href="#book" class="btn">Book a Cleaning</a>
+
+      <div class="hero-features">  
+        <span>Book online</span> 
+        <span>Transparent pricing</span> 
+        <span>Top-rated professionals</span>
+      </div>
+    </div>
+    <div class="hero-image">
+    </div>
+  </div>
+
+  <!--service section -->
+  <div class="section" id="services">
+    <h1>Our Services</h1>
+
+    <div class="services">
+
+      <!--Residence cleaning container-->
+      <div class="R-container">
+        
+        <div class="R-text">
+         <h1>1. Residential Cleaning</h1>
+         <p>Our residential cleaning service is designed to keep your home spotless, comfortable, and stress-free.
+           Whether it’s a one-time deep clean or regular maintenance, our trained professionals use eco-friendly 
+           products and proven techniques to ensure every corner of your home shines. From kitchens and bathrooms 
+           to living areas and bedrooms, we handle it all, so you can relax and enjoy a clean, healthy living space.
+         </p>
+        </div>
+
+        <div class="R-image">
+          <img src="./images/residence cleaning.jpg" class="R-image" alt="R cleaning">
+        </div>
+      
+      </div>
+
+      <!--carpet cleaning container-->
+      <div class="C-container">
+        <div class="C-image">
+
+           <img src="./images/carpet cleaning.jpg" class="C-image" alt="carpet cleaning">
+        </div>
+
+       <div class="C-text">
+        <h1>2. Carpet Cleaning</h1>
+        <p>Revive the beauty and freshness of your carpets with our professional carpet cleaning service.
+           We use advanced equipment and safe, effective cleaning solutions to remove dirt, stains, 
+           and allergens deep within the fibers. Whether it's routine care or heavy-duty stain removal, 
+           our team ensures your carpets look, feel, and smell like new—adding comfort and cleanliness to your space.
+        </p>
+       </div>
+        
+      </div>
+
+      <!--commercial cleaning container-->
+      <div class="CO-container">
+        
+        <div class="CO-text">
+          <h1>3. Commercial Cleaning</h1>
+        <p>Maintain a clean, professional, and healthy work environment with our reliable commercial cleaning services. 
+          From offices and retail spaces to warehouses, schools, and medical facilities, we tailor our cleaning solutions 
+          to meet the unique needs of your business. Our trained and trustworthy team uses advanced equipment and eco-friendly 
+          products to ensure every area from lobbies and workstations to restrooms and break rooms is spotless, sanitized, and welcoming.
+           With flexible scheduling and attention to detail, we help create a productive, safe, and polished atmosphere for your staff and clients.
+        </p>
+        </div>
+
+        <div class="CO-image">
+          <img src="./images/commercial cleaning.jpg" class="CO-image" alt="commercial cleaning">
+        </div>
+
+      </div>
+
+      <!--Pressure cleaning container-->
+      <div class="P-container">
+        
+        <div class="P-image">
+          <img src="./images/pressure cleaning.jpg" class="P-image" alt="Pressure cleaning">
+        </div>
+
+        <div class="P-text">
+          <h1>4. Pressure Washing</h1>
+        <p>Restore the beauty of your property with our professional pressure washing service. 
+          We safely and effectively remove dirt, grime, mold, and stains from surfaces like driveways, 
+          sidewalks, decks, walls, and building exteriors. Using high-powered equipment and expert techniques,
+           our team delivers a deep clean that enhances curb appeal and protects your investment. 
+           Whether it's residential or commercial, we leave your surfaces looking fresh, clean, and renewed.
+          </p>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+
+  <div class="B-section" id="book">
+    <h2>Book a Service</h2>
+
+    <!--booking Forms -->
+
+    <form id="booking-form"> <!-- Added id="booking-form" -->
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="first_name" placeholder="Enter your first name"> <!-- Changed name to first_name -->
+  
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="last_name" placeholder="Enter your last name"> <!-- Changed name to last_name -->
+  
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Enter your email address">
+  
+      <label for="phoneNumber">Phone Number</label>
+      <div class="phone-form">
+          <select id="countryCode" name="country_code"> <!-- Changed name to country_code -->
+              <option value="+1">+1 (USA)</option>
+              <option value="+44">+44 (UK)</option>
+             <!-- <option value="+233" selected>+233 (Ghana)</option> -->
+              </select>
+          <input type="text" id="phoneNumber" name="phone_number" placeholder="e.g., 24 123 4567"> <!-- Changed name to phone_number -->
+      </div>
+      <label for="Address"> Address</label> <!-- Changed for to Address -->
+      <input type="text" id="Address" name="address" placeholder="Enter your full Address"> <!-- Changed name to address -->
+  
+      <label for="Service">Service</label>
+      <select id="Service" name="service_type"> <!-- Changed name to service_type -->
+          <option value="">Select a Service...</option>
+          <option value="Residential Cleaning">Residential cleaning</option> <!-- Changed value to match admin_panel.html options -->
+          <option value="Carpet Cleaning">Carpet Cleaning</option> <!-- Changed value to match admin_panel.html options -->
+          <option value="Commercial Cleaning">Commercial Cleaning</option> <!-- Changed value to match admin_panel.html options -->
+          <option value="Pressure Washing">Pressure Washing</option> <!-- Changed value to match admin_panel.html options -->
+      </select>
+  
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" placeholder="Type your message here..."></textarea>
+
+      <label for="booking_date">Booking Date</label>
+      <input type="date" id="booking_date" name="booking_date" required>
+  
+      <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+  
+  <section class="testimonials-section" id="testimonials">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="testimonials-container">
+      <div class="testimonial-card">
+        <p class="testimonial-text">"I'm blown away by the sparkling clean house! The residential cleaning team from Teeman did an amazing job. They're reliable, efficient, and thorough. Highly recommend!"</p>
+        <p class="testimonial-author">- Emily W.</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">"The pressure washing service from Teeman transformed my driveway and sidewalk. The team was professional and courteous"</p>
+        <p class="testimonial-author">- David</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">"I was impressed by Teeman's attention to detail and eco-friendly products. Their residential cleaning service exceeded my expectations. I'll definitely be using them again!"</p>
+        <p class="testimonial-author">- Nana Ama</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="gallery-section" id="gallery">
+    <h2 class="section-title">Before & After</h2>
+    <div class="gallery-container">
+      <div class="gallery-item">
+        <img src="./images/first.jpg" alt="Before Cleaning and after" />
+      </div>
+      <div class="gallery-item">
+        <img src="./images/third.jpg" alt="Before and After Cleaning" />
+      </div>
+      <div class="gallery-item">
+        <img src="./images/forth.jpg" alt="Before and After Cleaning" />
+      </div>
+    </div>
+  </section>
+<!--  
+  <div class="section" id="gallery">
+    <h2>Before & After</h2>
+    <div class="gallery">
+      <img src="./images/first.jpg" alt="Before Cleaning and after" />
+      <img src="./images/third.jpg" alt="Before and After Cleaning" />
+      <img src="./images/forth.jpg" alt="Before and After Cleaning" />
+    </div>
+  </div>-->
+
+  <section class="contact-section" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i> Email: <a href="mailto:Orlandodom84@yahoo.com">Orlandodom84@yahoo.com</a></p>
+      <p><i class="fas fa-phone"></i> Phone: <a href="tel:‪+1 (443) 851-0667‬">‪+1 (443) 851-0667‬</a></p>
+    </div>
+    <p class="availability">We are available on WhatsApp and Live Chat during working hours.</p>
+  </section>
+  <footer>
+    <p>&copy; 2025 Teeman Services. All rights reserved.</p>
+  </footer>
+  
+</body>
+<script src="./js/website.js"></script>
+</html>
