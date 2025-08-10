@@ -87,7 +87,7 @@ function isAuthenticated(req, res, next) {
 // Serve login page
 app.get('/login.html', (req, res) => {
   if (req.session.isAdmin) {
-    return res.redirect('/admin.html');
+    return res.redirect('/admin_panel.html');
   }
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
@@ -337,5 +337,6 @@ app.post('/api/bookings', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+
 
 
