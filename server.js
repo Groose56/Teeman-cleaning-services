@@ -43,7 +43,7 @@ const sessionStore = new MySQLStore({
 
 /* ---------------- MIDDLEWARE ---------------- */
 app.use(cors({
-    origin: 'https://groose56.github.io/Teeman-cleaning-services/public/admin_panel.html', // CHANGE to your frontend domain
+    origin: 'https://groose56.github.io', // CHANGE to your frontend domain
     credentials: true
 }));
 app.use(express.json());
@@ -135,4 +135,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+
 
