@@ -62,16 +62,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret: process.env.SESSION_SECRET,
-  store: sessionStore,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: 86400000,
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production'
-  }
+    secret: process.env.SESSION_SECRET,
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 86400000,
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'none' // important if backend and frontend are on different domains
+    }
 }));
+
 
 function isAuthenticated(req, res, next) {
   if (req.session.isAdmin) return next();
@@ -333,6 +335,7 @@ app.post('/api/bookings', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
+
 
 
 
