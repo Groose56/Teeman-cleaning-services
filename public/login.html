@@ -8,132 +8,125 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #eef2f6; /* Light background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            background: linear-gradient(135deg, #007BFF, #00C6FF);
+            height: 100vh;
             margin: 0;
-            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
         .login-container {
-            background-color: #ffffff;
-            padding: 40px;
+            background: white;
+            padding: 30px 25px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
+            width: 350px;
+            box-shadow: 0px 5px 25px rgba(0,0,0,0.15);
             text-align: center;
         }
-        .login-container h2 {
-            font-size: 2.2rem;
-            color: #2c3e50; /* Dark blue-grey */
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-        .login-container .logo {
-            width: 80px;
-            height: auto;
+
+        h2 {
             margin-bottom: 20px;
+            font-weight: 600;
+            color: #333;
         }
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .form-group label {
+
+        label {
             display: block;
-            margin-bottom: 8px;
+            text-align: left;
             font-weight: 500;
+            margin: 10px 0 5px;
             color: #555;
         }
-        .form-group input {
-            width: calc(100% - 24px); /* Account for padding */
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .form-group input:focus {
-            border-color: #3498db;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
-        .btn-login {
+
+        input {
             width: 100%;
-            padding: 15px;
-            background-color: #3498db; /* Primary blue */
-            color: #ffffff;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0px 0px 5px rgba(0,123,255,0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
             border: none;
             border-radius: 8px;
-            font-size: 1.1rem;
+            background: #007BFF;
+            color: white;
             font-weight: 600;
+            font-size: 15px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: 0.3s ease;
         }
-        .btn-login:hover {
-            background-color: #2980b9;
-            transform: translateY(-2px);
+
+        button:hover {
+            background: #0056b3;
         }
-        .btn-login:active {
-            transform: translateY(0);
+
+        #error-message {
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
         }
-        .error-message {
-            color: #e74c3c; /* Red */
-            margin-top: 15px;
-            font-size: 0.9rem;
-            display: none; /* Hidden by default */
+
+        /* Small screen optimization */
+        @media (max-width: 400px) {
+            .login-container {
+                width: 90%;
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <img src="/images/teesman.png" alt="Teeman Logo" class="logo">
         <h2>Admin Login</h2>
         <form id="login-form">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="btn-login">Login</button>
-            <p id="error-message" class="error-message"></p>
+            <label>Username</label>
+            <input type="text" id="username" required>
+            <label>Password</label>
+            <input type="password" id="password" required>
+            <button type="submit">Login</button>
+            <p id="error-message"></p>
         </form>
     </div>
 
     <script>
         document.getElementById('login-form').addEventListener('submit', async (e) => {
             e.preventDefault();
+
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             const errorMessage = document.getElementById('error-message');
 
             try {
-                const response = await fetch('https://https://teeman-cleaning-services-production.up.railway.app/login', {
+                const response = await fetch('https://your-backend-domain.com/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, password }),
-                    credentials: 'include' // this is crucial for cookies
+                    credentials: 'include', // Send cookies across domains
+                    body: JSON.stringify({ username, password })
                 });
 
                 const data = await response.json();
 
                 if (response.ok) {
-                    window.location.href = '/admin.html'; // Redirect to admin panel
+                    window.location.href = 'https://your-frontend-domain.com/admin_panel.html';
                 } else {
-                    errorMessage.textContent = data.message || 'Login failed. Please try again.';
-                    errorMessage.style.display = 'block';
+                    errorMessage.textContent = data.message || 'Login failed';
                 }
-            } catch (error) {
-                console.error('Error during login:', error);
-                errorMessage.textContent = 'An error occurred. Please try again later.';
-                errorMessage.style.display = 'block';
+            } catch (err) {
+                errorMessage.textContent = 'Network error';
             }
         });
     </script>
 </body>
 </html>
-
